@@ -25,8 +25,8 @@ class User(db.Model):
         db.CheckConstraint("LENGTH(phone_number) = 10", name="check_integer_length"),
     )
 
-    def __repr__(self):
-        return f"{self.firstname} {self.lastname}"
+    # def __repr__(self):
+    #     return f"{self.firstname} {self.lastname}"
 
 
 class Task(db.Model):
