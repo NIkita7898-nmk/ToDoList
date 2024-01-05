@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatToDo?</title>
+    <link rel="icon" type="image/x-icon" href="/media/title.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        
+        <div id="column1">
+            <!-- <img src="/media/checklist.png"> -->
+            <img id="home-image"src="/media/todo.gif">
+        </div>
+        <div id="column2">
+            <form class="login">
+                <div class="login__field">
+                    <i class="login__icon fas fa-user"></i>
+                    <input  type="text" class="login__input" placeholder="User name / Email", id='email' required>
+                </div>
+                <div class="login__field">
+                    <i class="login__icon fas fa-lock"></i>
+                    <input type="password" class="login__input" placeholder="Password", id='password' required>
+                </div>
+                <button class="button login__submit" id="loginBtn">
+                    <span class="button__text">Log In Now</span>
+                    <i class="button__icon fas fa-chevron-right"></i>
+                    
+                </button>	
+                <button class="button signup__submit">
+                    <span class="button__text">Sign Up</span>
+                    <i class="button__icon fas fa-chevron-right"></i>
+                </button>				
+            </form>
+          </div>
+    </div>
+    <script src="user.js"></script>
+</body>
+</html>
