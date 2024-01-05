@@ -1,3 +1,4 @@
+from flask_cors import CORS
 from flask import Flask
 from views import bp
 from db import db
@@ -12,6 +13,7 @@ from flask_jwt_extended import (
 app = Flask(__name__)
 app.config["JWT_SECRET_KEY"] = "super-secret"
 jwt = JWTManager(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 

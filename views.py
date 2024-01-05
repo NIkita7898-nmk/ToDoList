@@ -18,6 +18,7 @@ from flask_jwt_extended import (
     decode_token,
 )
 
+
 @bp.route("/")
 def home():
     return "home"
