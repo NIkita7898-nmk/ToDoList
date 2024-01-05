@@ -25,8 +25,8 @@ class User(db.Model):
         db.CheckConstraint("LENGTH(phone_number) = 10", name="check_integer_length"),
     )
 
-    # def __repr__(self):
-    #     return f"{self.firstname} {self.lastname}"
+    def __repr__(self):
+        return f"{self.firstname} {self.lastname}"
 
 
 class Task(db.Model):
@@ -34,7 +34,7 @@ class Task(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
     task_title = db.Column(db.String(40), nullable=False)
     description = db.Column(db.String(300), nullable=True)
-    status = db.Column(db.Enum(TaskStatus))
+    status = db.Column(db.Enum(TaskStatus), default=TaskStatus.ToDo)
     started_on = db.Column(db.Date)
     completed_on = db.Column(db.Date)
 
