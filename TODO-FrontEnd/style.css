@@ -71,7 +71,7 @@ body {
 #home-image {
     border-radius: 114px;
     margin-left: 200px;
-    margin-top: 140px;
+    margin-top: 100px;
     box-shadow: 0px 2px 2px #5C5696;
     /* box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4); */
     /* justify-content: center;
@@ -83,8 +83,8 @@ body {
 .login {
     width: 320px;
     padding: 30px;
-    padding-top: 90px;
-    padding-left: 400px;
+    padding-top: 10px;
+    padding-left: 250px;
 }
 
 .login__field {
@@ -104,7 +104,7 @@ body {
     border-bottom: 2px solid #D1D1D4;
     background: none;
     padding: 10px;
-    padding-left: 24px;
+    padding-left: 14px;
     font-weight: 700;
     width: 75%;
     transition: .2s;
@@ -119,8 +119,9 @@ body {
 
 .login__submit {
     background: #fff;
-    font-size: 14px;
+    font-size: 13px;
     margin-top: 30px;
+    margin-left: 5px;
     padding: 16px 20px;
     border-radius: 26px;
     border: 1px solid #D4D3E8;
@@ -128,17 +129,18 @@ body {
     font-weight: 700;
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 4 0%;
     color: #4C489D;
     box-shadow: 0px 2px 2px #5C5696;
     cursor: pointer;
     transition: .2s;
+    align-items: center;
 }
 
 
 .signup__submit {
     background: #fff;
-    font-size: 14px;
+    font-size: 10px;
     margin-top: 30px;
     padding: 16px 20px;
     border-radius: 26px;
@@ -147,7 +149,7 @@ body {
     font-weight: 700;
     display: flex;
     align-items: center;
-    width: 50%;
+    /* width: 50%; */
     color: #4C489D;
     box-shadow: 0px 2px 2px #5C5696;
     cursor: pointer;
@@ -163,4 +165,33 @@ body {
 #home-image:hover {
     border-color: #6A679E;
     outline: none;
+}
+
+#container1 {
+
+    background-color: rgba(96, 24, 158, 0.288);
+    width: 70vw;
+    min-height: 3vw;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+    margin: 6vw;
+    padding: 70px;
+    padding-left: 150px;
+
+}
+
+.button__text {
+    text-decoration: none;
+    color: #4C489D;
+}
+
+#heading_registration {
+    text-align: center;
+    color: #483fc5;
+    font-weight: 700;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* -webkit-text-stroke: 1px rgb(255, 255, 255); */
+
 }
