@@ -3,7 +3,7 @@ from flask import Blueprint
 from passlib.hash import pbkdf2_sha256
 import jwt
 from functools import wraps
-from flask import request, abort
+from flask import request
 
 from models import User, Task
 from db import db
@@ -49,11 +49,11 @@ def registration():
             address=data["address"],
             phone_number=data["phone_number"],
         )
-        db.session.add(user_data)
+        db.session.add(user_data)                                                   
         db.session.commit()
         return jsonify({"message": "Account Created Successfully"}), 201
-
-
+                     
+                                                                                                               
 def verify_password(provided_password, stored_password):
     return pbkdf2_sha256.verify(provided_password, stored_password)
 
@@ -139,9 +139,9 @@ def get_user():
 @bp.route("/get-current-user/", methods=["GET"])
 @token_required
 def get_current_user(current_user):
-    users = User.query.all()
-    all_user = []
-    for user in users:
+    user = User.query.filter_by(id=current_user).first()
+
+    if user:
         user_dict = {
             "id": user.id,
             "name": f"{user.firstname} {user.lastname}",
@@ -149,11 +149,12 @@ def get_current_user(current_user):
             "address": user.address,
             "phone_no": str(user.phone_number),
         }
-        all_user.append(user_dict)
-    return jsonify({"users": all_user})
+        return jsonify({"user": user_dict}), 200
+    else:
+        return jsonify({"message": "User not found"}), 404
 
 
-@bp.route("/add-task/", methods=["POST"])
+# @bp.route("/add-task/", methods=["POST"])
 @token_required
 def add_task(current_user):
     data = request.json
@@ -231,3 +232,6 @@ def delete_task(current_user, id):
         return jsonify({"message": "Task deleted successfully"}), 200
     else:
         return jsonify({"message": "Task not found"}), 404
+
+
+
